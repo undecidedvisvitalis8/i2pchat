@@ -42,8 +42,19 @@
 ## Build instructions
 
  * Note: Qt 5.14 or later required
+ * For Qt versions prior to v5.14, you can try building with an older version of the code, available from: https://github.com/vituperative/i2pchat/archive/706c908ee267051da12c51f2b87c0d9c293f69d8.zip
 
 #### Dependencies
+
+<details><summary>Ubuntu (jammy or later)</summary>
+
+```
+sudo apt-get install -y devscripts build-essential lintian dh-make autoconf libqt5multimedia5 qtmultimedia5-dev libqt5svg5-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+```
+ * To prepare for compilation, run qmake:
+   - Release: `qmake I2PChat.pro "CONFIG += release"`
+   - Debug: `qmake I2PChat.pro "CONFIG += debug"`
+</details>
 
 <details><summary>Ubuntu (gutsy or later)</summary>
 
@@ -80,7 +91,7 @@ sudo dnf install make qt5-qtmultimedia-devel qt5-qtsvg-devel qt5-qtbase qt5-qtba
 
 #### Compilation
 
- * To prepare for compilation, run qmake-qt5:
+ * To prepare for compilation, run qmake-qt5 or qmake, depending on your environment:
    - Release: `qmake-qt5 I2PChat.pro "CONFIG += release"`
    - Debug: `qmake-qt5 I2PChat.pro "CONFIG += debug"`
 
